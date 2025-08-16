@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="Tac.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#00e6e6" />
+  <link rel="icon" href="icons/192_Tic.png" />
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("sw.js").then(() => {
+          console.log("✅ Service Worker Registered");
+        });
+      });
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Tic Tac Toe</h1>
+  <div id="board" class="board"></div>
+  <p id="status"></p>
+  <button onclick="restartGame()">Restart</button>
+
+  <script src="Toe.js"></script>
+</body>
+</html>
